@@ -9,6 +9,7 @@ import (
 // Store provides all functions to run db queries individually and transactions
 type Store interface {
 	Querier
+	TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error)
 }
 
 type SQLStore struct {
